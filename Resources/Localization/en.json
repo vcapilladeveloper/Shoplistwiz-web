@@ -1,0 +1,23 @@
+{
+    "signup_screen": {
+        "title": "Sign Up",
+        "invalid_password": "Password must contain at least 8 characters, including uppercase, lowercase, number and special character",
+        "default_error": "An unexpected error occurred. Please try again.",
+        "login_redirect_message": "Already have an account?",
+        "login_link_title": "Login"
+    },
+    "login_screen": {
+        "title": "Login",
+        "invalid_password": "Password must contain at least 8 characters, including uppercase, lowercase, number and special character",
+        "default_error": "An unexpected error occurred. Please try again.",
+        "signup_redirect_message": "Don't have an account?",
+        "signup_link_title": "Sign Up",
+        "reset_password_redirect_message": "Forgot your password?",
+        "reset_password_link_title": "Request reset password"
+    },
+    "common": {
+        "email": "Email:",
+        "password": "Password:",
+        "name": "Name:"
+    }
+}

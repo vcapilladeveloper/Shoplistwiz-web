@@ -1,11 +1,11 @@
 import Vapor
 
 func routes(_ app: Application) throws {
-    app.get { req async throws in
-        try await req.view.render("index", ["title": "Hello Vapor!"])
-    }
-
-    app.get("hello") { req async -> String in
-        "Hello, world!"
-    }
+    try app.register(collection: LoginController())
+    try app.register(collection: SignUpController())
+    try app.register(collection: DashboardController())
+    try app.register(collection: LandingController())
+    try app.register(collection: RequestChangePasswordController())
+    try app.register(collection: ChangePasswordController())
+    try app.register(collection: LanguageController())
 }

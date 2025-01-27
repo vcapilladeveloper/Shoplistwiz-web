@@ -1,0 +1,23 @@
+{
+    "signup_screen": {
+        "title": "Registrarse",
+        "invalid_password": "La contraseña debe contener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y un carácter especial",
+        "default_error": "Ocurrió un error inesperado. Por favor, inténtelo de nuevo.",
+        "login_redirect_message": "¿Ya tienes una cuenta?",
+        "login_link_title": "Iniciar sesión"
+    },
+    "login_screen": {
+        "title": "Iniciar sesión",
+        "invalid_password": "La contraseña debe contener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y un carácter especial",
+        "default_error": "Ocurrió un error inesperado. Por favor, inténtelo de nuevo.",
+        "signup_redirect_message": "¿No tienes una cuenta?",
+        "signup_link_title": "Regístrate",
+        "reset_password_redirect_message": "¿Olvidaste tu contraseña?",
+        "reset_password_link_title": "Restablecer contraseña"
+    },
+    "common": {
+        "email": "Correo electrónico:",
+        "password": "Contraseña:",
+        "name": "Nombre:"
+    }
+}

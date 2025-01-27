@@ -1,0 +1,53 @@
+#extend("layout"): I'm added to a base template!
+    #export("title"): Shop List Wiz - Your Weekly Menu & Shopping List #endexport
+    #export("content"):
+            <!--
+        <div style="
+            margin: -2em -2em 2em;       /* Negative top/bottom margin to stretch hero to edges of .container */
+            padding: 4em 2em;
+            background: var(--electric-blue);
+            color: var(--pure-white);
+            border-radius: 0 0 8px 8px;  /* Rounds only the bottom corners to blend with the .container */
+            text-align: center;
+        ">
+            <h1 style="margin-top: 0;">Plan Your Meals with Ease</h1>
+            <p>Generate Weekly Menus & Shopping Lists in Minutes</p>
+            <div style="margin-top: 1.5em;">
+                <a href="/signup" class="btn btn-pink">Sign Up Now</a>
+                <a href="/login" class="btn btn-secondary">Login</a>
+            </div>
+        </div>
+        <h2>Why Use ShopListWiz?</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 2em; margin-top: 2em;">
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Organized Recipes</h3>
+                <p>Store and categorize your favorite recipes, tailor them to specific diets, and quickly find what you need.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Auto-Generated Shopping Lists</h3>
+                <p>Plan your weekly meals, and let us compile the ingredients you’ll need for easy grocery shopping.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Family & Pros</h3>
+                <p>Invite family members to share one account or work with nutritionists and trainers for custom plans.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3em;">
+            <h2>Ready to Take Control of Your Meals?</h2>
+            <p>Join our growing community and make healthy meal planning effortless.</p>
+            <a href="/signup" class="btn btn-primary" style="margin-top: 1em;">Get Started</a>
+        </div>
+         -->
+        #if(isLoggedIn):
+            <p>You are currently logged in. Go directly to your dashboard:</p>
+            <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+        #else:
+            <p>Please join our community and start simplifying your weekly meal planning:</p>
+            <a href="/login" class="btn btn-primary">Login</a>
+            <a href="/signup" class="btn btn-secondary">Sign Up</a>
+            <p style="margin-top: 1em;">
+                <a href="/request-password">Forgot your password? Reset here</a>
+            </p>
+        #endif
+    #endexport
+#endextend

@@ -1,0 +1,24 @@
+#extend("layout"):
+    #export("title"): #(title) #endexport
+    #export("content"):
+        #if(errorMessage):
+            <div class="error-message" style="color: red; margin-bottom: 1em; text-align: center;">
+                #(errorMessage)
+            </div>
+        #endif
+        <form action="/login" method="POST">
+            <label for="email">#(email)</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">#(password)</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">#(title)</button>
+        </form>
+        <p style="text-align: center; margin-top: 1em;">
+            #(signUpRedirectMessage) <a href="/signup">#(signUpLinkTitle)</a><br>
+            #(resetPasswordRediectMessage) <a href="/request-password">#(resetPasswordLinkTitle)</a>
+        </p>
+    #endexport
+#endextend
+

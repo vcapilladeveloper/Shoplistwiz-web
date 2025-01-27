@@ -1,0 +1,23 @@
+{
+    "signup_screen": {
+        "title": "Registra't",
+        "invalid_password": "La contrasenya ha de contenir almenys 8 caràcters, incloent majúscules, minúscules, números i un caràcter especial",
+        "default_error": "S'ha produït un error inesperat. Si us plau, torna-ho a intentar.",
+        "login_redirect_message": "Ja tens un compte?",
+        "login_link_title": "Inicia sessió"
+    },
+    "login_screen": {
+        "title": "Inicia sessió",
+        "invalid_password": "La contrasenya ha de contenir almenys 8 caràcters, incloent majúscules, minúscules, números i un caràcter especial",
+        "default_error": "S'ha produït un error inesperat. Si us plau, torna-ho a intentar.",
+        "signup_redirect_message": "No tens un compte?",
+        "signup_link_title": "Registra't",
+        "reset_password_redirect_message": "Has oblidat la teva contrasenya?",
+        "reset_password_link_title": "Restablir contrasenya"
+    },
+    "common": {
+        "email": "Correu electrònic:",
+        "password": "Contrasenya:",
+        "name": "Nom:"
+    }
+}
