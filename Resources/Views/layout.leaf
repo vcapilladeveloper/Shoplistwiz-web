@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>#import("title")</title>
+    <style>
+        /* Base Colors (Light Mode) */
+        :root {
+            --electric-blue: #0A84FF;
+            --vivid-purple: #AF52DE;
+            --fresh-green: #34C759;
+            --soft-pink: #FF2D55;
+            --bright-orange: #FF9500;
+            --light-gray: #F2F2F7;
+            --dark-gray: #8E8E93;
+            --charcoal: #1C1C1E;
+            --gradient-aqua: #5AC8FA;
+            --gradient-purple: #AF52DE;
+            --mint-green: #30D158;
+            --pure-white: #FFFFFF;
+            --off-black: #121212;
+            --primary-text: #000000;
+        }
+
+        /* Dark Mode Overrides */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --electric-blue: #5A9CFF;
+                --vivid-purple: #C58EFF;
+                --fresh-green: #57D868;
+                --soft-pink: #FF4C78;
+                --bright-orange: #FFB733;
+                --light-gray: #3A3A3C;
+                --dark-gray: #AEAEB2;
+                --charcoal: #2C2C2E;
+                --gradient-aqua: #6ACCFB;
+                --gradient-purple: #C58EFF;
+                --mint-green: #3DE06A;
+                --pure-white: #1C1C1E;
+                --off-black: #000000;
+                --primary-text: #FFFFFF;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray);
+            color: var(--primary-text);
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 2em auto;
+            background: var(--pure-white);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+
+        a {
+            color: var(--electric-blue);
+            text-decoration: none;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75em 1em;
+            margin: 0.5em 0.25em 0.5em 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            color: var(--pure-white);
+            text-align: center;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background-color: var(--electric-blue);
+        }
+        .btn-secondary {
+            background-color: var(--vivid-purple);
+        }
+        .btn-orange {
+            background-color: var(--bright-orange);
+        }
+        .btn-pink {
+            background-color: var(--soft-pink);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 0.5rem;
+            color: var(--electric-blue);
+        }
+
+        input {
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--electric-blue);
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: var(--electric-blue);
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .lang-selector {
+             float: right;
+             margin-right: 1em
+        }
+}
+    </style>
+</head>
+<body>
+    <div class="lang-selector">
+      <form action="/select-language" method="POST" style="display: inline;">
+        <input type="hidden" name="language" value="en">
+        <input type="hidden" name="returnTo" value="#(currentPath)">
+        <button type="submit" style="border: none; background: none; cursor: pointer;">
+            <img src="/flags/en.svg" alt="English" style="height: 24px; width: auto;">
+        </button>
+      </form>
+
+      <form action="/select-language" method="POST" style="display: inline;">
+        <input type="hidden" name="language" value="es">
+        <input type="hidden" name="returnTo" value="#(currentPath)">
+        <button type="submit" style="border: none; background: none; cursor: pointer;">
+            <img src="/flags/es.svg" alt="English" style="height: 24px; width: auto;">
+        </button>
+      </form>
+
+      <form action="/select-language" method="POST" style="display: inline;">
+        <input type="hidden" name="language" value="ca">
+        <input type="hidden" name="returnTo" value="#(currentPath)">
+        <button type="submit" style="border: none; background: none; cursor: pointer;">
+            <img src="/flags/ca.svg" alt="English" style="height: 24px; width: auto;">
+        </button>
+      </form>
+    </div>
+    <div class="container">
+        <h1>#import("title")</h1>
+        #import("content")
+    </div>
+    
+</body>
+</html>
