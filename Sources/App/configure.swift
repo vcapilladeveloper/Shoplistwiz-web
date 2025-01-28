@@ -14,7 +14,7 @@ public func configure(_ app: Application) async throws {
     app.middleware.use(SessionsMiddleware(session: app.sessions.driver))
     app.views.use(.leaf)
 
-    app.http.server.configuration.port = 8081
+    app.http.server.configuration.port = 8080
 
     // register routes
     try routes(app)
