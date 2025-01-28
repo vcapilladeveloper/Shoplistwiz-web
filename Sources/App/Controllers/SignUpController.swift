@@ -63,7 +63,7 @@ struct SignUpController: RouteCollection {
                     ).encodeResponse(for: req)
                 }
 
-                let url = URI(string: "http://localhost:8080/api/signup")
+                let url = URI(string: "http://localhost:8081/api/signup")
                 let signupModel = SignupModel(
                     email: credentials.email, password: credentials.password)
 

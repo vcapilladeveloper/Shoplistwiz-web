@@ -13,7 +13,7 @@ struct ChangePasswordController: RouteCollection {
         
         webResetPassword.post { req -> Response in
             let credentials = try req.content.decode(UpdatePassword.self)
-            let url = URI(string: "http://localhost:8080/api/resetPassword")
+            let url = URI(string: "http://localhost:8081/api/resetPassword")
             let result = try await req.client.post(url, content: credentials)
             return req.redirect(to: "/dashboard")
         }

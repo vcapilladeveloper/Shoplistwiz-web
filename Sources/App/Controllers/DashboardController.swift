@@ -21,7 +21,7 @@ struct DashboardController: RouteCollection {
     }
     
     private func getUserInfo(token: String, req: Request) async throws -> UserInfo {
-        let url = URI(string: "http://localhost:8080/api/me")
+        let url = URI(string: "http://localhost:8081/api/me")
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(token)"
         ]

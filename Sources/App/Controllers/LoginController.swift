@@ -60,7 +60,7 @@ struct LoginController: RouteCollection {
                     ]).encodeResponse(for: req)
                 }
                 
-                let url = URI(string: "http://localhost:8080/api/login")
+                let url = URI(string: "http://localhost:8081/api/login")
                 
                 let authString = Data(
                     "\(credentials.email):\(credentials.password)".utf8

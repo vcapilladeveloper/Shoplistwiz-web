@@ -9,7 +9,7 @@ struct RequestChangePasswordController: RouteCollection {
         
         webRequestPassword.post { req -> Response in
             let credentials = try req.content.decode(ResetPasswordModel.self)
-            let url = URI(string: "http://localhost:8080/api/resetPassword?email=\(credentials.email)")
+            let url = URI(string: "http://localhost:8081/api/resetPassword?email=\(credentials.email)")
             let _ = try await req.client.get(url)
             return req.redirect(to: "/dashboard")
         }
