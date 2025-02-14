@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="sidebar-body">
+    <aside class="sidebar" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <ul>
+            <li onclick="loadContent('/ingredients')"><i class="fa-solid fa-carrot"></i><span> Ingredients</span></li>
+        </ul>
+        <div class="left-lang-selector">
+            <form action="/select-language" method="POST" style="display: inline;">
+                <input type="hidden" name="language" value="en">
+                <input type="hidden" name="returnTo" value="#(currentPath)">
+                <button type="submit" style="border: none; background: none; cursor: pointer;">
+                    <img src="/flags/en.svg" alt="English" style="height: 24px; width: auto;">
+                </button>
+            </form>
+
+            <form action="/select-language" method="POST" style="display: inline;">
+                <input type="hidden" name="language" value="es">
+                <input type="hidden" name="returnTo" value="#(currentPath)">
+                <button type="submit" style="border: none; background: none; cursor: pointer;">
+                    <img src="/flags/es.svg" alt="English" style="height: 24px; width: auto;">
+                </button>
+            </form>
+
+            <form action="/select-language" method="POST" style="display: inline;">
+                <input type="hidden" name="language" value="ca">
+                <input type="hidden" name="returnTo" value="#(currentPath)">
+                <button type="submit" style="border: none; background: none; cursor: pointer;">
+                    <img src="/flags/ca.svg" alt="English" style="height: 24px; width: auto;">
+                </button>
+            </form>
+        </div>
+    </aside>
+    <div class="content" id="content">
+        #import("content")
+    </div>
+    <!-- External JavaScript file -->
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

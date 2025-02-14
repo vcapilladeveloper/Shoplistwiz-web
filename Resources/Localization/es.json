@@ -13,11 +13,35 @@
         "signup_redirect_message": "¿No tienes una cuenta?",
         "signup_link_title": "Regístrate",
         "reset_password_redirect_message": "¿Olvidaste tu contraseña?",
-        "reset_password_link_title": "Restablecer contraseña"
+        "reset_password_link_title": "Restablecer contraseña",
+        "unauthorized": " Correo electrónico o contraseña incorrectos. Inténtalo de nuevo."
     },
     "common": {
         "email": "Correo electrónico:",
         "password": "Contraseña:",
         "name": "Nombre:"
-    }
+    },
+    
+    "dashboard": {
+        "logout": "Cerrar sesión"
+    },
+    
+      "ingredients": {
+        "title": "Lista de ingredientes",
+        "search_placeholder": "Buscar ingrediente...",
+        "modal_title": "Editar ingrediente",
+        "modal_cancel": "Cancelar",
+        "modal_save": "Guardar",
+        "header_english": "Inglés",
+        "header_spanish": "Español",
+        "header_catalan": "Catalán",
+        "header_calories": "Calorías",
+        "header_carbs": "Carbohidratos",
+        "header_protein": "Proteína",
+        "header_fat": "Grasa",
+        "header_fiber": "Fibra",
+        "header_gluten": "Sin gluten",
+        "header_vegan": "Vegano",
+        "header_vegetarian": "Vegetariano"
+      }
 }

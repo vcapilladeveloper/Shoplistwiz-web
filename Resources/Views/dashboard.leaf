@@ -1,16 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>#(token)</title>
-</head>
-
-<body>
-    <h1>#(token)</h1>
-    <h1>#(userId)</h1>
-    <h1>#(email)</h1>
-    <h1>#(password)</h1>
-</body>
-</html>
-
+#extend("main_layout"):
+    #export("title"): #(title) #endexport
+    #export("content"):
+        <h1> DASHBOARD </h1>
+        <h2>THIS IS THE DASHBOARD </h2>
+    #endexport
+#endextend

@@ -48,8 +48,13 @@ struct LoginController: RouteCollection {
         }
         
         webLogin.post { req async throws -> Response in
+            let selectedLang = req.cookies["lang"]?.string ?? "en"
+            
+            guard let localizationService = req.application.storage[LocalizationServiceKey.self] else {
+                throw Abort(.internalServerError, reason: "LocalizationService is not available.")
+            }
             do {
-                let credentials = try req.content.decode(UserModel.self)
+                let credentials = try req.content.decode(LoginModel.self)
                 
                 // Validate password
                 let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"
@@ -69,24 +74,34 @@ struct LoginController: RouteCollection {
                 headers.add(name: .authorization, value: "Basic \(authString)")
                 
                 let result = try await req.client.get(url, headers: headers)
-                let tokenModel = try result.content.decode(TokenModel.self)
-                var response = req.redirect(to: "/dashboard")
-                response.cookies["token"] = HTTPCookies.Value(
-                    string: tokenModel.value,
-                    expires: Date().addingTimeInterval(60 * 60 * 24 * 30), // 30 days
-                    path: "/",
-                    isSecure: false // Set to `true` if using HTTPS
-                )
-                
-                return response
+                if result.status != .ok {
+                    if result.status == .unauthorized {
+                        let unauthorized = localizationService.translate(language: selectedLang, key: "login_screen.unauthorized")
+                        req.session.data["error"] = unauthorized
+                        return req.redirect(to: "/login")
+                    } else {
+                        req.session.data["error"] = "Something goes wrong"
+                        return req.redirect(to: "/login")
+                    }
+                    
+                } else {
+                    let tokenModel = try result.content.decode(TokenModel.self)
+                    let response = req.redirect(to: "/dashboard")
+                    response.cookies["token"] = HTTPCookies.Value(
+                        string: tokenModel.value,
+                        expires: Date().addingTimeInterval(60 * 60 * 24 * 30), // 30 days
+                        path: "/",
+                        isSecure: false // Set to `true` if using HTTPS
+                    )
+                    
+                    return response
+                }
             } catch let error as AbortError {
-                // Store error message in session before redirect
                 req.session.data["error"] = error.reason
                 return req.redirect(to: "/login")
             } catch {
-                // Store generic error message in session before redirect
-                req.session.data["error"] =
-                "signup_screen.default_error"
+                let defaultError = localizationService.translate(language: selectedLang, key: "login_screen.default_error")
+                req.session.data["error"] = defaultError
                 return req.redirect(to: "/login")
             }
         }

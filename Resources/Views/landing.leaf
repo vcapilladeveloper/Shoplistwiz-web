@@ -1,4 +1,4 @@
-#extend("layout"): I'm added to a base template!
+#extend("auth_layout"):
     #export("title"): Shop List Wiz - Your Weekly Menu & Shopping List #endexport
     #export("content"):
             <!--

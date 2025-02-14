@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>#import("title")</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="lang-selector">
+      <form action="/select-language" method="POST" style="display: inline;">
+        <input type="hidden" name="language" value="en">
+        <input type="hidden" name="returnTo" value="#(currentPath)">
+        <button type="submit" style="border: none; background: none; cursor: pointer;">
+            <img src="/flags/en.svg" alt="English" style="height: 24px; width: auto;">
+        </button>
+      </form>
+
+      <form action="/select-language" method="POST" style="display: inline;">
+        <input type="hidden" name="language" value="es">
+        <input type="hidden" name="returnTo" value="#(currentPath)">
+        <button type="submit" style="border: none; background: none; cursor: pointer;">
+            <img src="/flags/es.svg" alt="English" style="height: 24px; width: auto;">
+        </button>
+      </form>
+
+      <form action="/select-language" method="POST" style="display: inline;">
+        <input type="hidden" name="language" value="ca">
+        <input type="hidden" name="returnTo" value="#(currentPath)">
+        <button type="submit" style="border: none; background: none; cursor: pointer;">
+            <img src="/flags/ca.svg" alt="English" style="height: 24px; width: auto;">
+        </button>
+      </form>
+    </div>
+    <div class="container">
+        <h1>#import("title")</h1>
+        #import("content")
+    </div>
+    
+</body>
+</html>

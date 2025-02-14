@@ -13,11 +13,35 @@
         "signup_redirect_message": "No tens un compte?",
         "signup_link_title": "Registra't",
         "reset_password_redirect_message": "Has oblidat la teva contrasenya?",
-        "reset_password_link_title": "Restablir contrasenya"
+        "reset_password_link_title": "Restablir contrasenya",
+        "unauthorized": "Correu electrònic o contrasenya incorrectes. Torna-ho a intentar."
     },
     "common": {
         "email": "Correu electrònic:",
         "password": "Contrasenya:",
         "name": "Nom:"
-    }
+    },
+    
+    "dashboard": {
+        "logout": "Tanca sessió"
+    },
+    
+      "ingredients": {
+        "title": "Llista d'ingredients",
+        "search_placeholder": "Cerca ingredient...",
+        "modal_title": "Edita ingredient",
+        "modal_cancel": "Cancel·la",
+        "modal_save": "Desa",
+        "header_english": "Anglès",
+        "header_spanish": "Espanyol",
+        "header_catalan": "Català",
+        "header_calories": "Calories",
+        "header_carbs": "Hidrats de carboni",
+        "header_protein": "Proteïna",
+        "header_fat": "Greix",
+        "header_fiber": "Fibra",
+        "header_gluten": "Sense gluten",
+        "header_vegan": "Vegà",
+        "header_vegetarian": "Vegetarià"
+      }
 }

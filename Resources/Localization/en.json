@@ -13,11 +13,35 @@
         "signup_redirect_message": "Don't have an account?",
         "signup_link_title": "Sign Up",
         "reset_password_redirect_message": "Forgot your password?",
-        "reset_password_link_title": "Request reset password"
+        "reset_password_link_title": "Request reset password",
+        "unauthorized": "You are not authorized to perform this action."
     },
     "common": {
         "email": "Email:",
         "password": "Password:",
         "name": "Name:"
+    },
+    
+    "dashboard": {
+        "logout": "Logout"
+    },
+    
+    "ingredients": {
+        "title": "List of ingredients",
+        "search_placeholder": "Search ingredient...",
+        "modal_title": "Edit ingredient",
+        "modal_cancel": "Cancel",
+        "modal_save": "Save",
+        "header_english": "English",
+        "header_spanish": "Spanish",
+        "header_catalan": "Catalan",
+        "header_calories": "Calories",
+        "header_carbs": "Carbs",
+        "header_protein": "Protein",
+        "header_fat": "Fat",
+        "header_fiber": "Fiber",
+        "header_gluten": "Gluten Free",
+        "header_vegan": "Vegan",
+        "header_vegetarian": "Vegetarian"
     }
 }

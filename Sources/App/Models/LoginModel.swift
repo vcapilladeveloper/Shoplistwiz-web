@@ -1,7 +1,6 @@
 import Vapor
 
-struct UserModel: Codable, Content {
-    var name: String
+struct LoginModel: Codable, Content {
     var email: String
     var password: String
 }

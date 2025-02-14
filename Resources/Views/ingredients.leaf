@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <title>#(c.title)</title>
+</head>
+<body>
+  <div class="scroll" id="scroll">
+    <h1>#(c.title)</h1>
+     <!-- Search Bar -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="#(c.searchPlaceholder)"
+        onkeyup="filterTable()"
+      />
+    </div>
+    <table id="ingredientsTable">
+      <thead>
+        <tr>
+          <th>#(c.headerEnglish)</th>
+          <th>#(c.headerSpanish)</th>
+          <th>#(c.headerCatalan)</th>
+          <th>#(c.headerCalories)</th>
+          <th>#(c.headerCarbohydrates)</th>
+          <th>#(c.headerProtein)</th>
+          <th>#(c.headerFat)</th>
+          <th>#(c.headerFiber)</th>
+          <th>#(c.headerGlutenFree)</th>
+          <th>#(c.headerVegan)</th>
+          <th>#(c.headerVegetarian)</th>
+        </tr>
+      </thead>
+      <tbody>
+        #for(ingredient in ingredients):
+        <tr>
+          <td>#(ingredient.english)</td>
+          <td>#(ingredient.spanish)</td>
+          <td>#(ingredient.catalan)</td>
+          <td>#(ingredient.calories)</td>
+          <td>#(ingredient.carbohydratesG)</td>
+          <td>#(ingredient.proteinG)</td>
+          <td>#(ingredient.fatG)</td>
+          <td>#(ingredient.fiberG)</td>
+          <td>#(ingredient.isGlutenFree)</td>
+          <td>#(ingredient.isVegan)</td>
+          <td>#(ingredient.isVegetarian)</td>
+          <td>
+            <button class="btn btn-edit" onclick="editRow(this)">
+              <i class="fa fa-edit"></i>
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-remove" onclick="removeRow(this)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+        #endfor
+      </tbody>
+    </table>
+  </div>
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">#(c.modalTitle)</h2>
+      </div>
+      <div class="modal-body">
+        <form id="editForm">
+          <div class="form-group" style="display: none;">
+            <label for="id">Id</label>
+            <label type="text" id="editId" name="editId"></label>
+          </div>
+          <div class="form-group">
+            <label for="editEnglish">#(c.headerEnglish)</label>
+            <input type="text" id="editEnglish" name="english" required>
+          </div>
+          <div class="form-group">
+            <label for="editSpanish">#(c.headerSpanish)</label>
+            <input type="text" id="editSpanish" name="spanish" required>
+          </div>
+          <div class="form-group">
+            <label for="editCatalan">#(c.headerCatalan)</label>
+            <input type="text" id="editCatalan" name="catalan" required>
+          </div>
+          <div class="form-group">
+            <label for="editCalories">#(c.headerCalories)</label>
+            <input type="number" id="editCalories" name="calories" required>
+          </div>
+          <div class="form-group">
+            <label for="editCarbs">#(c.headerCarbohydrates)</label>
+            <input type="number" step="any" id="editCarbs" name="carbohydratesG" required>
+          </div>
+          <div class="form-group">
+            <label for="editProtein">#(c.headerProtein)</label>
+            <input type="number" step="any" id="editProtein" name="proteinG" required>
+          </div>
+          <div class="form-group">
+            <label for="editFat">#(c.headerFat)</label>
+            <input type="number" step="any" id="editFat" name="fatG" required>
+          </div>
+          <div class="form-group">
+            <label for="editFiber">#(c.headerFiber)</label>
+            <input type="number" step="any" id="editFiber" name="fiberG" required>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="editGlutenFree" name="isGlutenFree">
+              #(c.headerGlutenFree)
+            </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="editVegan" name="isVegan">
+              #(c.headerVegan)
+            </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="editVegetarian" name="isVegetarian">
+              #(c.headerVegetarian)
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-cancel" onclick="closeModal()">#(c.modalCancel)</button>
+        <button class="btn btn-save" onclick="saveChanges()">#(c.modalSave)</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

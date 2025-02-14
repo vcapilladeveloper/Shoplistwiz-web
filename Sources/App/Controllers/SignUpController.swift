@@ -32,7 +32,7 @@ struct SignUpController: RouteCollection {
             let context: [String: String] = [
                 "title": title,
                 "currentPath": currentPath,
-                "error": errorMessage ?? "",
+                "errorMessage": errorMessage ?? "",
                 "email": email,
                 "password": password,
                 "name": name,
@@ -41,7 +41,7 @@ struct SignUpController: RouteCollection {
                 
             ]
 
-            return try await req.view.render("signup", context)
+            return try await req.view.render("Auth/signup", context)
         }
 
         webSignup.post { req async throws -> Response in
@@ -65,11 +65,12 @@ struct SignUpController: RouteCollection {
 
                 let url = URI(string: "http://localhost:8081/api/signup")
                 let signupModel = SignupModel(
-                    email: credentials.email, password: credentials.password)
+                    name: credentials.name, email: credentials.email, password: credentials.password)
 
                 // Make the POST request
                 let result = try await req.client.post(
-                    url, content: signupModel)
+                    url, content: signupModel
+                )
                 guard
                     let tokenModel = try? result.content.decode(TokenModel.self)
                 else {
@@ -78,7 +79,7 @@ struct SignUpController: RouteCollection {
                     return req.redirect(to: "/signup")
                 }
                 
-                var response = req.redirect(to: "/dashboard")
+                let response = req.redirect(to: "/dashboard")
                 response.cookies["token"] = HTTPCookies.Value(
                     string: tokenModel.value,
                     expires: Date().addingTimeInterval(60 * 60 * 24 * 30), // 30 days

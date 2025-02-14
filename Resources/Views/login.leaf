@@ -1,4 +1,4 @@
-#extend("layout"):
+#extend("auth_layout"):
     #export("title"): #(title) #endexport
     #export("content"):
         #if(errorMessage):

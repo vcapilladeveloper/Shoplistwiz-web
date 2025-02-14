@@ -8,4 +8,5 @@ func routes(_ app: Application) throws {
     try app.register(collection: RequestChangePasswordController())
     try app.register(collection: ChangePasswordController())
     try app.register(collection: LanguageController())
+    try app.register(collection: IngredientsController())
 }

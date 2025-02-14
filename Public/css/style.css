@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --electric-blue: #5A9CFF;
+  --vivid-purple: #C58EFF;
+  --fresh-green: #57D868;
+  --soft-pink: #FF4C78;
+  --bright-orange: #FFB733;
+  --light-gray: #3A3A3C;
+  --dark-gray: #AEAEB2;
+  --charcoal: #2C2C2E;
+  --gradient-aqua: #6ACCFB;
+  --gradient-purple: #C58EFF;
+  --mint-green: #3DE06A;
+  --pure-white: #1C1C1E;
+  --off-black: #000000;
+  --primary-text: #FFFFFF;
+  --background: #9c88ff;
+  --navbar-width: 256px;
+  --navbar-width-min: 80px;
+  --navbar-dark-primary: #18283b;
+  --navbar-dark-secondary: #2c3e50;
+  --navbar-light-primary: #f5f6fa;
+  --navbar-light-secondary: #8392a5;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-gray);
+  color: var(--primary-text);
+}
+
+.container {
+  /* max-width: 400px; */
+  margin: 2em auto;
+  background: var(--pure-white);
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+a {
+  color: var(--electric-blue);
+  text-decoration: none;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75em 1em;
+  margin: 0.5em 0.25em 0.5em 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  color: var(--pure-white);
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--electric-blue);
+}
+
+.btn-secondary {
+  background-color: var(--vivid-purple);
+}
+
+.btn-orange {
+  background-color: var(--bright-orange);
+}
+
+.btn-pink {
+  background-color: var(--soft-pink);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  color: var(--electric-blue);
+}
+
+input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--electric-blue);
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--electric-blue);
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.lang-selector {
+  float: right;
+  margin-right: 1em
+}
+
+.left-lang-selector {
+  float: left;
+  margin-left: 1em
+}
+
+.sidebar-body {
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-gray);
+  color: var(--primary-text);
+}
+
+.sidebar {
+  min-height: 100vh;
+  width: 250px;
+  min-width: 250px;
+  background: #2C3E50;
+  color: white;
+  transition: width 0.3s;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+  min-width: 70px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  min-height: 70px;
+  transition: background-color 0.3s;
+  transition: width 0.3s;
+}
+
+.sidebar ul li:hover {
+  background: #34495E;
+}
+
+.sidebar ul li i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar.collapsed ul li span {
+  display: none;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.toggle-btn {
+  background: #34495E;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Scrollable Container (Card-like) */
+.scroll {
+  margin: 20px auto;
+  background-color: var(--pure-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  padding: 20px;
+}
+
+/* Header */
+.scroll h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+/* Table Header with Gradient Background */
+thead th {
+  background: var(--electric-blue);
+  color: var(--pure-white);
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Table Body Cells */
+tbody td {
+  padding: 8px 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Zebra Striping for Table Rows */
+tbody tr:nth-of-type(even) {
+  background-color: var(--electric-blue);
+}
+
+/* Hover Effect on Rows */
+tbody tr:hover {
+  background-color: var(--vivid-purple);
+  color: var(--pure-white);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  table {
+    min-width: 100%;
+  }
+  thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  td:before {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+    color: var(--electric-blue);
+    content: attr(data-label);
+  }
+}
+
+.search-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid var(--electric-blue);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: var(--vivid-purple);
+}
+
+ /* Modal Styles */
+ .modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5); /* Black with opacity */
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+.modal-header, .modal-footer {
+  padding: 10px;
+}
+.modal-header {
+  border-bottom: 1px solid #ddd;
+}
+.modal-footer {
+  border-top: 1px solid #ddd;
+  text-align: right;
+}
+.modal-title {
+  margin: 0;
+  font-size: 1.25em;
+  color: var(--electric-blue);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.form-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+.btn-save {
+  background-color: var(--electric-blue);
+  color: white;
+}
+.btn-cancel {
+  background-color: var(--soft-pink);
+  color: white;
+}
+/* Optional: Style the Edit and Remove buttons in the table */
+.btn-edit {
+  background-color: var(--gradient-aqua);
+  color: white;
+  padding: 10px; /* Adjust as needed */
+  width: 35px;  /* Set a fixed width */
+  height: 35px; /* Set a fixed height */
+  font-size: 1rem; /* Adjust icon size as needed */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center;
+}
+.btn-remove {
+  background-color: var(--soft-pink);
+  color: white;
+  padding: 10px; /* Adjust as needed */
+  width: 35px;  /* Set a fixed width */
+  height: 35px; /* Set a fixed height */
+  font-size: 1rem; /* Adjust icon size as needed */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center;
+}
+
+
